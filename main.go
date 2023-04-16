@@ -57,26 +57,26 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 	//this is really smart as this says close the file once everuything unmderneath it has finsihded executing
 	defer file.Close()
 
-	// //this code only checks the file type is correct only
-	// buff := make([]byte, 512)
-	// _, err = file.Read(buff)
-	// if err != nil {
-	// 	http.Error(w, err.Error(), http.StatusInternalServerError)
-	// 	return
-	// }
+	//this code only checks the file type is correct only
+	buff := make([]byte, 512)
+	_, err = file.Read(buff)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 
-	// filetype := http.DetectContentType(buff)
-	// if filetype != "image/jpeg" && filetype != "image/png" { {
-	// 	http.Error(w, "The provided file format is not allowed. Please upload a JPEG or PNG image", http.StatusBadRequest)
-	// 	return
-	// }
+	filetype := http.DetectContentType(buff)
+	if filetype != "image/jpeg" && filetype != "image/png" {
+		http.Error(w, "The provided file format is not allowed. Please upload a JPEG or PNG image", http.StatusBadRequest)
+		return
+	}
 
-	// _, err := file.Seek(0, io.SeekStart)
-	// if err != nil {
-	// 	http.Error(w, err.Error(), http.StatusInternalServerError)
-	// 	return
-	// }
-	// //done checking the filetype
+	_, err = file.Seek(0, io.SeekStart)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	//done checking the filetype
 
 	err = os.MkdirAll("./uploads", os.ModePerm)
 	if err != nil {
