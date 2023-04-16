@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Timestamp Microservice</title>
+  <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png"
+    type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      color: #222;
+      background-color: #FaFaFa;
+      text-align: center;
+      line-height: 1.4em;
+    }
+
+    .container {
+      padding: 0;
+      margin-top: 30px;
+    }
+    h1 {
+      line-height: 40px;
+    }
+    h3 {
+      margin-top: 30px;
+    }
+
+    hr {
+      margin: 25px;
+    }
+
+
+    code {
+      font-family: monospace;
+      color: black;
+      background-color: #fff;
+    }
+
+    ul {
+      list-style-type: circle;
+    }
+
+    li {
+      margin-bottom: 0.5em;
+    }
+
+    a {
+      color: #2574A9;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Welcome {{.userAgent}} user</h1>
+  <hr />
+  <div class="container">
+    <h1>/default idex page</h1>
+    <h3>Example Usage:</h3>
+    <ul>
+      <li><a href="name?name=rahul&age=18">[project url]/name?name=rahul&age=18</a></li>
+      <li>Uplaod Image: <a href="uploadImage">[project url]/uploadImage</a></li>
+      <li>then view it: <a href="viewImage?imageId=1681628832987795341.png">[project url]/viewImage?imageId=[new_file_name_server]</a></li>
+    </ul>
+
+    <h4>Example Images:</h4>
+      <code>
+        <ul>
+          <li><a href="viewImage?imageId=1681631707197732952.jpeg">Tiger wondering uder apple tree</a></li>
+          <li><a href="viewImage?imageId=1681631896911449362.jpeg">Lion watching horse run</a></li>
+          <li><a href="viewImage?imageId=1681631999852841993.jpeg">Human and Dog posing with vintage car</a></li>
+        </ul>
+      </code>
+  </div>
+  <div class="footer">
+    <i>note* Images are ai generated (microsoft bing create)</i>
+    <hr />
+    <p>
+      A Project by Harixh Kumawat
+    </p>
+  </div>
+</body>
+
+</html>
